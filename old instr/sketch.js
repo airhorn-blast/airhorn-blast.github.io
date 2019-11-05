@@ -1,15 +1,12 @@
 let osc
 let frequency = 440
 let fft
-let reverb
-//let v = 1
+
+
 function setup() {
     let canvas = createCanvas(windowWidth, windowHeight)
  canvas.parent("p5")
-    
- //   vSlider = createSlider(0, 10, 10);
- // vSlider.position(170, 20);
-    
+  
     osc = new p5.Oscillator()
     osc.setType("sine")
      osc.amp(1)
@@ -20,17 +17,15 @@ function setup() {
     env = new p5.Envelope()
     env.setADSR(.01, .1, .7, .5)
     
-   reverb = new p5.Reverb()
+    ellipseMode(RADIUS)
     
+  
 
 }
 
 function draw(){
    
-  //  const v = vSlider.value()/10;
-    //osc.amp(v)
     
-  //  text('volume', vSlider.x * 2 + vSlider.width, 35);
 noFill()
     
     //noStroke()
@@ -56,12 +51,6 @@ noFill()
    //  ellipse(width/2, height/2, 200, 200, 37);
   // ellipse(width/2, height/2, 100, 100, 37);
     
-    //slider text
-   
-   // textSize(50)
-    // text('volume', vSlider.x + 10 + vSlider.width, 35);
-   
-   
     
     //square
       push()
@@ -82,7 +71,7 @@ noFill()
     } else {
         noFill()
     }
-    ellipse(65, 25, 30, 30)
+    ellipse(65, 25, 15, 15)
     pop()
     
     
@@ -142,23 +131,23 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
     push()
     noStroke()
     fill(0,0,0)
-    rect(x,y2,x,y)
+    rect(x*2,y2,x,y)
     
-    rect(x*3,y2,x,y)
+    rect(x*4,y2,x,y)
     
-     rect(x*6,y2,x,y)
-     rect(x*8,y2,x,y)
-     rect(x*10,y2,x,y)
-     rect(x*13,y2,x,y)
-     rect(x*15,y2,x,y)
-     rect(x*18,y2,x,y)
-     rect(x*20,y2,x,y)
-     rect(x*22,y2,x,y)
-     rect(x*25,y2,x,y)
-     rect(x*27,y2,x,y)
-    rect(x*30,y2,x,y)
-    rect(x*32,y2,x,y)
-    rect(x*34,y2,x,y)
+     rect(x*7,y2,x,y)
+     rect(x*9,y2,x,y)
+     rect(x*11,y2,x,y)
+     rect(x*14,y2,x,y)
+     rect(x*16,y2,x,y)
+     rect(x*19,y2,x,y)
+     rect(x*21,y2,x,y)
+     rect(x*23,y2,x,y)
+     rect(x*26,y2,x,y)
+     rect(x*28,y2,x,y)
+    rect(x*31,y2,x,y)
+    rect(x*33,y2,x,y)
+    rect(x*35,y2,x,y)
     
     
     pop()
@@ -167,49 +156,50 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
      push()
     noFill()
     stroke(0,255,0);
-    text('1', x,y2+x)
-    text('2', x*3,y2+x)
-   text('4', x*6,y2+x)
-    text('5', x*8,y2+x)
-     text('6', x*10,y2+x)
-    text('8', x*13,y2+x)
-     text('9', x*15,y2+x)
-    text('a', x*18,y2+x)
-     text('s', x*20,y2+x)
-    text('d', x*22,y2+x)
-    text('g', x*25,y2+x)
-     text('h', x*27,y2+x)
-    text('k', x*30,y2+x)
-     text('l', x*32,y2+x)
-    text(';', x*34,y2+x)
+    text('1', x*2,y2+x)
+    text('2', x*4,y2+x)
+   text('4', x*7,y2+x)
+    text('5', x*9,y2+x)
+     text('6', x*11,y2+x)
+    text('8', x*14,y2+x)
+     text('9', x*16,y2+x)
+    text('a', x*19,y2+x)
+     text('s', x*21,y2+x)
+    text('d', x*23,y2+x)
+    text('g', x*26,y2+x)
+     text('h', x*28,y2+x)
+    text('k', x*31,y2+x)
+     text('l', x*33,y2+x)
+    text(';', x*35,y2+x)
     pop()
     
     // key labels white
        push()
     noFill()
     stroke(5);
-    text('`', 0,y4)
-   text('q', x*2,y4)
-    text('w', x*4,y4)
-    text('e', x*5,y4)
-    text('r', x*7,y4)
-    text('t', x*9,y4)
-    text('y', x*11,y4)
-    text('u', x*12,y4)
-    text('i', x*14,y4)
-    text('o', x*16,y4)
-    text('p', x*17,y4)
-    text('z', x*19,y4)
-    text('x', x*21,y4)
-    text('c', x*23,y4)
-    text('v', x*24,y4)
-    text('b', x*26,y4)
-    text('n', x*28,y4)
-       text('m', x*29,y4)
-    text(',', x*31,y4)
-    text('.', x*33,y4)
-    text('?', x*35,y4)
-    text('Shft', x*36,y4)
+    text('`', x,y4)
+   text('q', x*3,y4)
+    text('w', x*5,y4)
+    text('e', x*6,y4)
+    text('r', x*8,y4)
+    text('t', x*10,y4)
+    text('y', x*12,y4)
+    text('u', x*13,y4)
+    text('i', x*15,y4)
+    text('o', x*17,y4)
+    text('p', x*18,y4)
+    text('z', x*20,y4)
+    text('x', x*22,y4)
+    text('c', x*24,y4)
+    text('v', x*25,y4)
+    text('b', x*27,y4)
+    text('n', x*29,y4)
+       text('m', x*30,y4)
+    text(',', x*32,y4)
+    text('.', x*17,y4)
+    text('.', x*34,y4)
+    text('?', x*36,y4)
+    text('Shft', x*37,y4)
     
     pop()
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -218,25 +208,25 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
     frequency = 130.813;
        osc.freq(frequency)
       
-          rect(0,y3,x,y3*2)
+          rect(x,y3,x,y3*2)
 
-      text('C3', 0, y4);
+      text('C3', x, y4);
   }
 
   // c#3 (1)
   if (keyIsDown(49)) {
     frequency = 138.591;
        osc.freq(frequency)
-      rect(x,y2,x,y)
-      text('C#3', x, y2);
+      rect(x*2,y2,x,y)
+      text('C#3', x*2, y2);
   }
     
 //d3 (q)
   if (keyIsDown(81)) {
     frequency = 146.182;
        osc.freq(frequency)
-        text('D3', x*2, y1);
-                rect(x*2,y3,x,y3*2)
+        text('D3', x*3, y1);
+                rect(x*3,y3,x,y3*2)
 
   }
     
@@ -244,8 +234,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(50)) {
     frequency = 155.563;
        osc.freq(frequency)
-            text('D#3', x*3, y2);
-    rect(x*3,y2,x,y)
+            text('D#3', x*4, y2);
+    rect(x*4,y2,x,y)
 
   }
 
@@ -253,8 +243,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(87)) {
     frequency = 164.814;
        osc.freq(frequency)
-            text('E3', x*4, y1);
-                rect(x*4,y3,x,y3*2)
+            text('E3', x*5, y1);
+                rect(x*5,y3,x,y3*2)
 
 
   }
@@ -263,8 +253,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(69)) {
     frequency = 174.614;
        osc.freq(frequency)
-            text('F3', x*5, y1);
-          rect(x*5,y3,x,y3*2)
+            text('F3', x*6, y1);
+          rect(x*6,y3,x,y3*2)
 
   }
 
@@ -272,8 +262,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(52)) {
     frequency = 184.997;
        osc.freq(frequency)
-            text('F#3', x*6, y2);
-           rect(x*6,y2,x,y)
+            text('F#3', x*7, y2);
+           rect(x*7,y2,x,y)
 
 
   }
@@ -282,8 +272,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(82)) {
     frequency = 195.998;
        osc.freq(frequency)
-            text('G3', x*7, y1);
-          rect(x*7,y3,x,y3*2)
+            text('G3', x*8, y1);
+          rect(x*8,y3,x,y3*2)
 
   }
 
@@ -291,8 +281,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(53)) {
     frequency = 207.652;
        osc.freq(frequency)
-            text('G#3', x*8, y2);
-     rect(x*8,y2,x,y)
+            text('G#3', x*9, y2);
+     rect(x*9,y2,x,y)
 
   }
 
@@ -300,8 +290,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(84)) {
     frequency = 220;
        osc.freq(frequency)
-            text('A3', x*9, y1);
-                rect(x*9,y3,x,y3*2)
+            text('A3', x*10, y1);
+                rect(x*10,y3,x,y3*2)
 
 
   }
@@ -310,8 +300,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(54)) {
     frequency = 233.082;
        osc.freq(frequency)
-            text('A#3', x*10, y2);
-     rect(x*10,y2,x,y)
+            text('A#3', x*11, y2);
+     rect(x*11,y2,x,y)
 
   }
 
@@ -319,8 +309,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(89)) {
     frequency = 246.942;
        osc.freq(frequency)
-            text('B3', x*11, y1);
-          rect(x*11,y3,x,y3*2)
+            text('B3', x*12, y1);
+          rect(x*12,y3,x,y3*2)
 
   }
 
@@ -328,8 +318,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(85)) {
     frequency = 261.626;
        osc.freq(frequency)
-            text('C4', x*12, y1);
-          rect(x*12,y3,x,y3*2)
+            text('C4', x*13, y1);
+          rect(x*13,y3,x,y3*2)
 
   }
 
@@ -337,8 +327,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(56)) {
     frequency = 277.183;
        osc.freq(frequency)
-            text('C#4', x*13, y2);
-     rect(x*13,y2,x,y)
+            text('C#4', x*14, y2);
+     rect(x*14,y2,x,y)
 
   }
 
@@ -346,8 +336,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(73)) {
     frequency = 293.665;
        osc.freq(frequency)
-            text('D4', x*14, y1);
-          rect(x*14,y3,x,y3*2)
+            text('D4', x*15, y1);
+          rect(x*15,y3,x,y3*2)
 
   }
 
@@ -355,8 +345,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(57)) {
     frequency = 311.127;
        osc.freq(frequency)
-            text('D#4', x*15, y2);
-     rect(x*15,y2,x,y)
+            text('D#4', x*16, y2);
+     rect(x*16,y2,x,y)
 
   }
 
@@ -364,17 +354,17 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(79)) {
     frequency = 329.628;
        osc.freq(frequency)
-            text('E4', x*16, y1);
-          rect(x*16,y3,x,y3*2)
+            text('E4', x*17, y1);
+          rect(x*17,y3,x,y3*2)
 
   }
 
- // f4 p
+ // f4
   if (keyIsDown(80)) {
     frequency = 349.228;
        osc.freq(frequency)
-            text('F4', x*17, y1);
-          rect(x*17,y3,x,y3*2)
+            text('F4', x*18, y1);
+          rect(x*18,y3,x,y3*2)
 
   }
 
@@ -382,8 +372,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(65)) {
     frequency = 369.994;
        osc.freq(frequency)
-            text('F#4', x*18, y2);
-     rect(x*18,y2,x,y)
+            text('F#4', x*19, y2);
+     rect(x*19,y2,x,y)
 
   }
 
@@ -391,8 +381,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(90)) {
     frequency = 391.995;
        osc.freq(frequency)
-            text('G4', x*19, y1);
-          rect(x*19,y3,x,y3*2)
+            text('G4', x*20, y1);
+          rect(x*20,y3,x,y3*2)
 
   }
 
@@ -400,8 +390,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(83)) {
     frequency = 415.305;
        osc.freq(frequency)
-            text('G#4', x*20, y2);
-           rect(x*20,y2,x,y)
+            text('G#4', x*21, y2);
+           rect(x*21,y2,x,y)
 
 
   }
@@ -410,8 +400,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(88)) {
     frequency = 440;
        osc.freq(frequency)
-            text('A4', x*21, y1);
-          rect(x*21,y3,x,y3*2)
+            text('A4', x*22, y1);
+          rect(x*22,y3,x,y3*2)
 
   }
 
@@ -419,8 +409,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(68)) {
     frequency = 466.164;
        osc.freq(frequency)
-            text('A#4', x*22, y2);
-           rect(x*22,y2,x,y)
+            text('A#4', x*23, y2);
+           rect(x*23,y2,x,y)
 
 
   }
@@ -429,8 +419,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(67)) {
     frequency = 493.883;
        osc.freq(frequency)
-            text('B4', x*23, y1);
-          rect(x*23,y3,x,y3*2)
+            text('B4', x*24, y1);
+          rect(x*24,y3,x,y3*2)
 
   }
 
@@ -438,8 +428,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(86)) {
     frequency = 523.251;
        osc.freq(frequency)
-            text('C5', x*24, y1);
-          rect(x*24,y3,x,y3*2)
+            text('C5', x*25, y1);
+          rect(x*25,y3,x,y3*2)
 
   }
 
@@ -447,8 +437,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(71)) {
     frequency = 554.365;
        osc.freq(frequency)
-            text('C#5', x*25, y2);
-           rect(x*25,y2,x,y)
+            text('C#5', x*26, y2);
+           rect(x*26,y2,x,y)
 
 
   }
@@ -457,8 +447,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(66)) {
     frequency = 587.330;
        osc.freq(frequency)
-            text('D5', x*26, y1);
-          rect(x*26,y3,x,y3*2)
+            text('D5', x*27, y1);
+          rect(x*27,y3,x,y3*2)
 
   }
 
@@ -466,8 +456,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(72)) {
     frequency = 622.254;
        osc.freq(frequency)
-            text('D#5', x*27, y2);
-     rect(x*27,y2,x,y)
+            text('D#5', x*28, y2);
+     rect(x*28,y2,x,y)
 
   }
 
@@ -475,8 +465,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(78)) {
     frequency = 659.255;
        osc.freq(frequency)
-            text('E5', x*28, y1);
-          rect(x*28,y3,x,y3*2)
+            text('E5', x*29, y1);
+          rect(x*29,y3,x,y3*2)
 
   }
 
@@ -484,8 +474,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(77)) {
     frequency = 698.456;
        osc.freq(frequency)
-            text('F5', x*29, y1);
-          rect(x*29,y3,x,y3*2)
+            text('F5', x*30, y1);
+          rect(x*30,y3,x,y3*2)
 
   }
 
@@ -493,8 +483,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(75)) {
     frequency = 739.989;
        osc.freq(frequency)
-            text('F#5', x*30, y2);
-     rect(x*30,y2,x,y)
+            text('F#5', x*31, y2);
+     rect(x*31,y2,x,y)
 
   }
 
@@ -502,8 +492,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(188)) {
     frequency = 783.991;
        osc.freq(frequency)
-            text('G5', x*31, y1);
-          rect(x*31,y3,x,y3*2)
+            text('G5', x*32, y1);
+          rect(x*32,y3,x,y3*2)
 
   }
 
@@ -511,8 +501,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(76)) {
     frequency = 830.609;
        osc.freq(frequency)
-            text('G#5', x*32, y2);
-     rect(x*32,y2,x,y)
+            text('G#5', x*33, y2);
+     rect(x*33,y2,x,y)
 
   }
 
@@ -520,8 +510,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(190)) {
     frequency = 880;
        osc.freq(frequency)
-            text('A5', x*33, y1);
-          rect(x*33,y3,x,y3*2)
+            text('A5', x*34, y1);
+          rect(x*34,y3,x,y3*2)
 
   }
 
@@ -529,8 +519,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(186)) {
     frequency = 932.328;
        osc.freq(frequency)
-            text('A#5', x*34, y2);
-     rect(x*34,y2,x,y)
+            text('A#5', x*35, y2);
+     rect(x*35,y2,x,y)
 
   }
 
@@ -538,8 +528,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(191)) {
     frequency = 987.767;
        osc.freq(frequency)
-            text('B5', x*35, y1);
-          rect(x*35,y3,x,y3*2)
+            text('B5', x*36, y1);
+          rect(x*36,y3,x,y3*2)
 
   }
     
@@ -547,8 +537,8 @@ line( i, height/2 + height/4,  i,  height/2 - height/4);
   if (keyIsDown(16)) {
     frequency = 1046.50;
        osc.freq(frequency)
-            text('C6', x*36, y1);
-          rect(x*36,y3,x,y3*2)
+            text('C6', x*37, y1);
+          rect(x*37,y3,x,y3*2)
 
   } 
 
@@ -683,7 +673,7 @@ function mouseClicked() {
            //  osc.setType('sine')
        //  }
         strokeWeight(50)
-    } else{}
+    }
     
 }
 
